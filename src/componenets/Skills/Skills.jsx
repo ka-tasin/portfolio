@@ -8,20 +8,36 @@ const Skills = () => {
 
   const expertise = [
     {
+      title: "TypeScript",
+      photo: "https://i.ibb.co.com/0DD8PPG/download.png",
+    },
+    {
       title: "JavaScript",
       photo: "https://i.ibb.co.com/GR7phM4/download.png",
     },
     {
-      title: "React JS",
-      photo: "https://i.ibb.co.com/sKbJtYR/download.png",
+      title: "Node.js",
+      photo: "https://i.ibb.co.com/7K1wXZt/nodejs-icon.png",
     },
     {
       title: "Express JS",
       photo: "https://i.ibb.co.com/f0vKNZ0/download.png",
     },
     {
+      title: "React JS",
+      photo: "https://i.ibb.co.com/sKbJtYR/download.png",
+    },
+    {
+      title: "PostgreSQL",
+      photo: "https://i.ibb.co.com/qkTcHRz/postgresql.png",
+    },
+    {
       title: "MongoDB",
       photo: "https://i.ibb.co.com/kh1PLtf/download.jpg",
+    },
+    {
+      title: "Prisma ORM",
+      photo: "https://i.ibb.co.com/9ZXqYQY/prisma.png",
     },
     { title: "Redux JS", photo: "https://i.ibb.co.com/hLNXBhN/download.png" },
     {
@@ -39,10 +55,6 @@ const Skills = () => {
     { title: "HTML 5", photo: "https://i.ibb.co.com/zQDTwJH/download.png" },
   ];
   const comfortable = [
-    {
-      title: "TypeScript",
-      photo: "https://i.ibb.co.com/0DD8PPG/download.png",
-    },
     { title: "Next JS", photo: "https://i.ibb.co.com/pP9jj6D/download.png" },
     {
       title: "Next Auth",
@@ -56,7 +68,6 @@ const Skills = () => {
   ];
   const familiar = [
     { title: "JQuery", photo: "https://i.ibb.co.com/P5Kq3JS/download.png" },
-    { title: "Node JS", photo: "https://i.ibb.co.com/1LCLFzs/download.png" },
     { title: "Stripe", photo: "https://i.ibb.co.com/XLzxKxf/download.png" },
     {
       title: "SSL Commerze",
@@ -67,6 +78,10 @@ const Skills = () => {
     {
       title: "Git",
       photo: "https://i.ibb.co.com/vHmjCFt/download.png",
+    },
+    {
+      title: "Jest",
+      photo: "https://i.ibb.co.com/9ZK7WKr/jest.png",
     },
     {
       title: "JWT",

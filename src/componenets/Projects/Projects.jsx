@@ -6,40 +6,40 @@ import { RxExternalLink } from "react-icons/rx";
 const Projects = () => {
   const projects = [
     {
-      project_name: "Contest Pro",
-      image: "https://i.ibb.co/DVYk6m9/Screenshot-2024-09-30-184652.png",
-      image_alt: "Contes Pro home screen",
-      description:
-        "Contest Pro is a dynamic platform that allows users to create, manage, and participate in various contests. It features role-based access with three main roles: Admin, Creator, and User. The project includes an admin dashboard for managing users and contests.",
-      details_link:
-        "https://github.com/KausarAhmadTasin/contest-pro-client/blob/main/README.md",
-      live_link: "https://contest-pro-58eec.web.app/",
-      frontend_link: "https://github.com/KausarAhmadTasin/contest-pro-client",
-      backend_link: "https://github.com/KausarAhmadTasin/contest-pro-server",
-    },
-    {
       project_name: "Dream Jobs",
       image: "https://i.ibb.co.com/1MB7KFC/Screenshot-2024-09-24-194530.png",
       image_alt: "Dream Jobs home screen",
       description:
-        "Dream Jobs is a dynamic and responsive web application designed for job seekers and employers. Users can search for jobs, apply to them, and manage job postings. The platform includes JWT-based authentication to secure user-specific routes and utilizes a variety of modern web technologies to provide a smooth user experience.",
+        "A full-stack job platform connecting employers and job seekers, designed for scalability and clean architecture. Features TypeScript, Node.js, Express.js with layered architecture (Controller → Service → Repository), IoC, DI patterns, and Unit of Work with Prisma ORM for PostgreSQL transactions.",
       details_link:
-        "https://github.com/KausarAhmadTasin/dream-jobs-client/blob/main/README.md",
+        "https://github.com/ka-tasin/dream-jobs/blob/main/README.md",
       live_link: "https://dream-jobs-fae96.web.app/",
-      frontend_link: "https://github.com/KausarAhmadTasin/dream-jobs-client",
-      backend_link: "https://github.com/KausarAhmadTasin/dream-jobs-server",
+      frontend_link: "https://github.com/ka-tasin/dream-jobs",
+      backend_link: "https://github.com/ka-tasin/dream-jobs",
     },
     {
-      project_name: "PixArts",
-      image: "https://i.ibb.co.com/8sdWR7y/Screenshot-2024-10-01-205759.png",
-      image_alt: "PixArts home screen",
+      project_name: "Convo.ai",
+      image: "https://i.ibb.co.com/6BFzYNg/convo-ai-screenshot.png",
+      image_alt: "Convo.ai chat interface",
       description:
-        "Pix-Craft is a vibrant platform for showcasing, selling, and buying art. Artists can add, edit, and delete their own artworks, providing a personal gallery experience for each user.",
+        "A real-time chat application enabling seamless communication between users and an integrated AI assistant. Features Socket.io for real-time messaging, JWT authentication, ChatGPT AI integration, and a flexible API structure built with Node.js, TypeScript, Express, and MongoDB.",
       details_link:
-        "https://github.com/KausarAhmadTasin/pixArts/blob/main/README.md",
-      live_link: "https://pixarts-67417.web.app/",
-      frontend_link: "https://github.com/KausarAhmadTasin/pixArts",
-      backend_link: "https://github.com/KausarAhmadTasin/pixArts-server",
+        "https://github.com/ka-tasin/convo.ai/blob/main/README.md",
+      live_link: "https://convo-ai-demo.web.app/",
+      frontend_link: "https://github.com/ka-tasin/convo.ai",
+      backend_link: "https://github.com/ka-tasin/convo.ai",
+    },
+    {
+      project_name: "Contest Pro",
+      image: "https://i.ibb.co/DVYk6m9/Screenshot-2024-09-30-184652.png",
+      image_alt: "Contest Pro home screen",
+      description:
+        "Contest creation platform where creators host and manage contests, and users participate and submit entries. Features role-based access control with JWT authentication, secure participant rating system with MongoDB validation, and Stripe payment integration for contest entry fees.",
+      details_link:
+        "https://github.com/ka-tasin/contest-pro/blob/main/README.md",
+      live_link: "https://contest-pro-58eec.web.app/",
+      frontend_link: "https://github.com/ka-tasin/contest-pro",
+      backend_link: "https://github.com/ka-tasin/contest-pro",
     },
   ];
 
@@ -80,9 +80,7 @@ const Projects = () => {
               </a>
             </div>
             <div className="flex justify-between items-end w-full border-t border-gray-700 pt-4">
-              {/* 
-                      Live Link
-            */}{" "}
+              {/* Live Link */}{" "}
               <a target="_blank" href={project.live_link}>
                 {" "}
                 <button className="bg-green-500 font-medium text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300">
@@ -91,20 +89,16 @@ const Projects = () => {
               </a>
               <div>
                 {" "}
-                <p className="text-center mb-2"> GitHub Links</p>
+                <p className="text-center mb-2">GitHub Links</p>
                 <div className="flex space-x-4 items-center">
-                  {/* 
-                        Frontend Link
-                */}
+                  {/* Frontend Link */}
                   <a href={project.frontend_link} target="_blank">
                     {" "}
                     <button className="bg-lime-600 text-white py-2 px-4 rounded-lg hover:bg-lime-700 transition duration-300">
                       Frontend
                     </button>
                   </a>
-                  {/* 
-                        Backend Link 
-              */}
+                  {/* Backend Link */}
                   <a href={project.backend_link} target="_blank">
                     <button className="bg-teal-500 text-white py-2 px-4 rounded-lg hover:bg-teal-600 transition duration-300">
                       Backend
