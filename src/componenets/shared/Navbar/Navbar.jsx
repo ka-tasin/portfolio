@@ -62,11 +62,10 @@ const Navbar = () => {
             {navItems.map((item) => (
               <a
                 onClick={() => setPath(item.itemPath)}
-                className={`hover:text-[#66ec97]  duration-200 ${
-                  path === item.itemPath
-                    ? "text-[#66ec97] underline-offset-2 underline"
-                    : "text-gray-300"
-                }`}
+                className={`hover:text-[#66ec97]  duration-200 ${path === item.itemPath
+                  ? "text-[#66ec97] underline-offset-2 underline"
+                  : "text-gray-300"
+                  }`}
                 href={item.itemPath}
                 key={item.itemName}
               >
@@ -75,7 +74,7 @@ const Navbar = () => {
             ))}
 
             <a
-              href="https://drive.google.com/file/d/1sr7vEQUZsPsup_Caz5tNvZWaAvnYRZnr/view?usp=drive_link"
+              href="https://drive.google.com/file/d/169nlqqlRYAkchtCA8Ix69uXm8Sv9XW6m/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -96,9 +95,8 @@ const Navbar = () => {
 
       {/* Drawer content (for smaller screens) */}
       <div
-        className={`lg:hidden absolute top-16 right-0 w-2/3 bg-[#030712] z-40 p-5 shadow-md shadow-[#66ec97] transform transition-transform duration-3  00 ${
-          isDrawerOpen ? "translate-y-0" : "-translate-y-[35rem]"
-        }`}
+        className={`lg:hidden absolute top-16 right-0 w-2/3 bg-[#030712] z-40 p-5 shadow-md shadow-[#66ec97] transform transition-transform duration-3  00 ${isDrawerOpen ? "translate-y-0" : "-translate-y-[35rem]"
+          }`}
       >
         <ul className="flex flex-col items-start gap-y-4 ">
           {navItems.map((item) => (
@@ -107,11 +105,10 @@ const Navbar = () => {
                 setPath(item.itemPath);
                 setIsDrawerOpen(false); // Close drawer after selection
               }}
-              className={`hover:text-[#66ec97] duration-200 ${
-                path === item.itemPath
-                  ? "text-[#66ec97] underline-offset-2 underline"
-                  : "text-gray-300"
-              }`}
+              className={`hover:text-[#66ec97] duration-200 ${path === item.itemPath
+                ? "text-[#66ec97] underline-offset-2 underline"
+                : "text-gray-300"
+                }`}
               href={item.itemPath}
               key={item.itemName}
             >
@@ -120,7 +117,7 @@ const Navbar = () => {
           ))}
 
           <a
-            href="https://drive.google.com/file/d/1ysjzK5BHUdE2QhmDJvTaPQV68MOvIRvO/view?usp=sharing"
+            href="https://drive.google.com/file/d/169nlqqlRYAkchtCA8Ix69uXm8Sv9XW6m/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
