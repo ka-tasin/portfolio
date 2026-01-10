@@ -1,20 +1,22 @@
 import localFont from "next/font/local";
+import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/componenets/shared/Navbar/Navbar";
-import Footer from "@/componenets/Footer/Footer";
+import Navbar from "@/components/shared/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Kausar Ahmad Tasin | Full-Stack Web Developer",
   description:
     "Portfolio of Kausar Ahmad Tasin, a full-stack web developer skilled in JavaScript, TypeScript, React, Node.js, and MongoDB. Explore projects, skills, and contact information.",
@@ -36,7 +38,11 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html className="scroll-smooth" lang="en">
       <head>
@@ -58,24 +64,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
-// export default function RootLayout({ children }) {
-//   return (
-//     <html className="scroll-smooth" lang="en">
-//       <head>
-//         <link
-//           rel="shortcut icon"
-//           href="https://i.ibb.co.com/cFWhLbk/h-img.jpg"
-//         />
-//         <link rel="canonical" href="https://kausar-ahmad.vercel.app/" />
-//       </head>
-//       <body
-//         className={`${geistSans.variable} bg-[#030712] ${geistMono.variable} antialiased`}
-//       >
-//         <Navbar />
-//         {children}
-//         <Footer />
-//       </body>
-//     </html>
-//   );
-// }

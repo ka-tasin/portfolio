@@ -1,8 +1,9 @@
 "use client";
+
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 
-const ThankYou = () => {
+const ThankYou = (): React.ReactElement => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gray-900 px-4">
       <div className="bg-gray-800 p-8 rounded-2xl shadow-xl max-w-md w-full text-center">
