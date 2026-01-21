@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Title from "../shared/Titile/Title";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { FiCalendar, FiMapPin, FiCode, FiTrendingUp } from "react-icons/fi";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -10,7 +10,7 @@ const Experience = (): React.ReactElement => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end end"],
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 100]);
@@ -27,9 +27,15 @@ const Experience = (): React.ReactElement => {
       points: [
         "Develop full-stack applications using modern technologies and industry best practices",
         "Architect both frontend and backend components for comprehensive software solutions",
-        "Collaborate with cross-functional teams to build scalable and maintainable systems"
+        "Collaborate with cross-functional teams to build scalable and maintainable systems",
       ],
-      technologies: ["Node.js", "TypeScript", "PostgreSQL", "React.js", "Next.js"]
+      technologies: [
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "React.js",
+        "Next.js",
+      ],
     },
     {
       company: "The Tork Inc.",
@@ -42,10 +48,16 @@ const Experience = (): React.ReactElement => {
         "Developed LMS features including student dashboards and secure payment integration",
         "Built e-commerce features with API integration and state management using Redux.js",
         "Resolved critical production bugs and collaborated on API integration using Jira",
-        "Led migration of Vue.js user interface to Next.js architecture"
+        "Led migration of Vue.js user interface to Next.js architecture",
       ],
-      technologies: ["Next.js", "TypeScript", "Sass (SCSS)", "Redux.js", "Jira"]
-    }
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Sass (SCSS)",
+        "Redux.js",
+        "Jira",
+      ],
+    },
   ];
 
   return (
@@ -56,11 +68,11 @@ const Experience = (): React.ReactElement => {
     >
       {/* Subtle background elements with parallax */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute top-20 -left-40 w-80 h-80 border border-gray-100 rounded-full"
           style={{ y: y1 }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-20 -right-40 w-96 h-96 border border-gray-100 rounded-full"
           style={{ y: y2 }}
         />
@@ -69,9 +81,7 @@ const Experience = (): React.ReactElement => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <Title className="mb-4">
-              Professional Experience
-            </Title>
+            <Title className="mb-4">Professional Experience</Title>
           </div>
 
           {/* Timeline container */}
@@ -87,22 +97,26 @@ const Experience = (): React.ReactElement => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className={`relative mb-16 lg:mb-24 last:mb-0 ${
-                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
                 {/* Timeline connector - desktop only */}
                 <div className="hidden lg:block absolute left-1/2 top-16 w-4 h-0.5 bg-gray-200 -translate-x-1/2" />
-                
+
                 {/* Timeline dot - desktop only */}
                 <div className="hidden lg:block absolute left-1/2 top-16 w-3 h-3 bg-gray-800 rounded-full transform -translate-x-1/2 -translate-y-1/2 border-4 border-white" />
 
-                <div className={`flex flex-col lg:flex-row items-start gap-8 ${
-                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                }`}>
+                <div
+                  className={`flex flex-col lg:flex-row items-start gap-8 ${
+                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
+                >
                   {/* Company Card - Always on left for mobile, alternating for desktop */}
-                  <div className={`lg:w-1/2 ${
-                    index % 2 === 0 ? 'lg:pr-12' : 'lg:pl-12'
-                  }`}>
+                  <div
+                    className={`lg:w-1/2 ${
+                      index % 2 === 0 ? "lg:pr-12" : "lg:pl-12"
+                    }`}
+                  >
                     <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
                       <div className="flex items-start gap-4 mb-6">
                         {exp.logo ? (
@@ -122,7 +136,7 @@ const Experience = (): React.ReactElement => {
                             </span>
                           </div>
                         )}
-                        
+
                         <div>
                           <h3 className="text-xl font-bold text-gray-900 mb-1">
                             {exp.company}
@@ -152,9 +166,11 @@ const Experience = (): React.ReactElement => {
                   </div>
 
                   {/* Experience Details - Always on right for mobile, alternating for desktop */}
-                  <div className={`lg:w-1/2 ${
-                    index % 2 === 0 ? 'lg:pl-12' : 'lg:pr-12'
-                  }`}>
+                  <div
+                    className={`lg:w-1/2 ${
+                      index % 2 === 0 ? "lg:pl-12" : "lg:pr-12"
+                    }`}
+                  >
                     <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 lg:p-8">
                       <div className="mb-8">
                         <h4 className="text-lg font-semibold text-gray-900 mb-4">
@@ -197,9 +213,11 @@ const Experience = (): React.ReactElement => {
 
           {/* CTA */}
           <div className="text-center mt-20">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors duration-200">
-              <FiTrendingUp className="w-4 h-4" />
-              <span>Open to new opportunities & collaborations</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-700 rounded-lg border border-gray-300 text-sm shadow-sm">
+              <FiTrendingUp className="w-4 h-4 text-green-600" />
+              <span className="font-medium">
+                Currently open to new opportunities & collaborations
+              </span>
             </div>
           </div>
         </div>
