@@ -65,9 +65,6 @@ const Projects = (): React.ReactElement => {
           <Title className="mb-4">
             Featured Projects
           </Title>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Showcasing professional work with modern technologies and clean architecture
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
