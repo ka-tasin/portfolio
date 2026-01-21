@@ -35,8 +35,8 @@ const Navbar = (): React.ReactElement => {
   // Close drawer when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const drawer = document.querySelector('.drawer-content');
-      const menuButton = document.querySelector('.menu-button');
+      const drawer = document.querySelector(".drawer-content");
+      const menuButton = document.querySelector(".menu-button");
       if (
         isDrawerOpen &&
         drawer &&
@@ -48,8 +48,8 @@ const Navbar = (): React.ReactElement => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isDrawerOpen]);
 
   const toggleDrawer = (): void => {
@@ -59,36 +59,47 @@ const Navbar = (): React.ReactElement => {
   const handleNavClick = (itemPath: string): void => {
     setPath(itemPath);
     setIsDrawerOpen(false);
-    
+
     // Smooth scroll to section
-    const id = itemPath.replace('/#', '');
+    const id = itemPath.replace("/#", "");
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <nav className={`w-full fixed top-0 left-0 z-50 bg-white transition-all duration-300 ${
-      isScrolled 
-        ? "border-b border-gray-200 shadow-sm py-3" 
-        : "border-b border-gray-100 py-4"
-    }`}>
+    <nav
+      className={`w-full fixed top-0 left-0 z-50 bg-white transition-all duration-300 ${
+        isScrolled
+          ? "border-b border-gray-200 shadow-sm py-3"
+          : "border-b border-gray-100 py-4"
+      }`}
+    >
       <div className="lg:container lg:mx-auto lg:px-12 px-6 flex justify-between items-center">
         {/* Professional Logo */}
         <div className="flex items-center">
-          <a 
-            href="#home" 
+          <a
+            href="#home"
             onClick={() => handleNavClick("/#home")}
             className="group"
           >
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-gray-900 tracking-tight font-sans">
-                KAUSAR AHMAD
-              </span>
-              <span className="text-xs text-gray-500 font-medium tracking-wider uppercase mt-1">
-                Full Stack Developer
-              </span>
+              <button className="focus:outline-none active:scale-95 transition-transform duration-150">
+                <span className="text-2xl font-bold text-gray-900 tracking-tight font-sans hover:scale-105 transition-transform duration-300">
+                  <span className="font-mono tracking-tighter inline-block hover:animate-bounce">
+                    <span className="text-blue-600 dark:text-blue-400">
+                      &lt;
+                    </span>
+                    <span className="text-gray-900 dark:text-gray-100 font-black">
+                      kat
+                    </span>
+                    <span className="text-blue-600 dark:text-blue-400">
+                      /&gt;
+                    </span>
+                  </span>
+                </span>
+              </button>
             </div>
           </a>
         </div>
@@ -108,9 +119,11 @@ const Navbar = (): React.ReactElement => {
                 href={item.itemPath}
               >
                 {item.itemName}
-                <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-3/4 ${
-                  path === item.itemPath ? "w-3/4" : ""
-                }`} />
+                <span
+                  className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-3/4 ${
+                    path === item.itemPath ? "w-3/4" : ""
+                  }`}
+                />
               </a>
             ))}
           </div>
@@ -136,12 +149,16 @@ const Navbar = (): React.ReactElement => {
           aria-label="Toggle menu"
         >
           <div className="relative w-6 h-6">
-            <AiOutlineMenu className={`absolute inset-0 transition-all duration-300 ${
-              isDrawerOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"
-            }`} />
-            <AiOutlineClose className={`absolute inset-0 transition-all duration-300 ${
-              isDrawerOpen ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
-            }`} />
+            <AiOutlineMenu
+              className={`absolute inset-0 transition-all duration-300 ${
+                isDrawerOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"
+              }`}
+            />
+            <AiOutlineClose
+              className={`absolute inset-0 transition-all duration-300 ${
+                isDrawerOpen ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
+              }`}
+            />
           </div>
         </button>
       </div>
@@ -153,7 +170,7 @@ const Navbar = (): React.ReactElement => {
             ? "translate-x-0 opacity-100"
             : "translate-x-full opacity-0"
         }`}
-        style={{ pointerEvents: isDrawerOpen ? 'auto' : 'none' }}
+        style={{ pointerEvents: isDrawerOpen ? "auto" : "none" }}
       >
         <div className="p-6 border-t border-gray-100">
           <ul className="space-y-1">
@@ -176,19 +193,24 @@ const Navbar = (): React.ReactElement => {
                   }`}
                   href={item.itemPath}
                 >
-                  <span className={`w-1.5 h-1.5 mr-3 bg-gray-900 transition-all duration-300 ${
-                    path === item.itemPath ? "opacity-100" : "opacity-0"
-                  }`} />
+                  <span
+                    className={`w-1.5 h-1.5 mr-3 bg-gray-900 transition-all duration-300 ${
+                      path === item.itemPath ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
                   {item.itemName}
                 </a>
               </li>
             ))}
-            
-            <li className={`pt-4 mt-4 border-t border-gray-100 transform transition-all duration-300 ${
-              isDrawerOpen
-                ? "translate-x-0 opacity-100"
-                : "translate-x-4 opacity-0"
-            }`} style={{ animationDelay: `${navItems.length * 50}ms` }}>
+
+            <li
+              className={`pt-4 mt-4 border-t border-gray-100 transform transition-all duration-300 ${
+                isDrawerOpen
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-4 opacity-0"
+              }`}
+              style={{ animationDelay: `${navItems.length * 50}ms` }}
+            >
               <a
                 href="https://drive.google.com/file/d/169nlqqlRYAkchtCA8Ix69uXm8Sv9XW6m/view?usp=sharing"
                 target="_blank"
@@ -206,9 +228,7 @@ const Navbar = (): React.ReactElement => {
       {/* Backdrop for mobile drawer */}
       <div
         className={`lg:hidden fixed inset-0 bg-black z-30 transition-all duration-300 ${
-          isDrawerOpen
-            ? "opacity-50 top-20"
-            : "opacity-0 pointer-events-none"
+          isDrawerOpen ? "opacity-50 top-20" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsDrawerOpen(false)}
       />
