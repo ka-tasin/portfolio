@@ -228,7 +228,7 @@ const Skills = (): React.ReactElement => {
           <Title className="mb-3">Technical Skills</Title>
         </div>
 
-        {/* Category Tabs - No rounded corners */}
+        {/* Category Tabs - Responsive */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           {categories.map((category) => (
             <button
@@ -237,37 +237,46 @@ const Skills = (): React.ReactElement => {
                 setActiveCategory(category.id);
                 setShowAll(false);
               }}
-              className={`flex items-center gap-2 px-5 py-3 transition-all duration-200 border ${
+              className={`flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 transition-all duration-200 border ${
                 activeCategory === category.id
                   ? "bg-gray-900 text-white border-gray-900"
                   : "text-gray-700 border-gray-300 hover:border-gray-400 hover:bg-gray-50"
-              }`}
+              } text-xs md:text-sm`}
             >
-              <span className="font-medium text-sm">{category.label}</span>
+              <span className="font-medium">{category.label}</span>
+              <span
+                className={`px-1.5 py-0.5 text-xs ${
+                  activeCategory === category.id
+                    ? "bg-gray-700 text-gray-200"
+                    : "bg-gray-100 text-gray-600"
+                }`}
+              >
+                {category.count}
+              </span>
             </button>
           ))}
         </div>
 
-        {/* Skills Grid - No rounded corners */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        {/* Skills Grid - Responsive columns */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
           {displaySkills.map((skill) => (
             <div
               key={skill.title}
-              className="group bg-white border border-gray-200 p-5 hover:border-gray-300 transition-all"
+              className="group bg-white border border-gray-200 p-4 sm:p-5 hover:border-gray-300 transition-all"
             >
               {/* Logo + Title (PRIMARY FOCUS) */}
-              <div className="flex flex-col items-center text-center mb-4">
-                <div className="w-12 h-12 bg-gray-50 border border-gray-100 flex items-center justify-center mb-3">
+              <div className="flex flex-col items-center text-center mb-3 sm:mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-50 border border-gray-100 flex items-center justify-center mb-2 sm:mb-3">
                   <Image
                     src={skill.photo}
                     alt={skill.title}
-                    width={28}
-                    height={28}
-                    className="object-contain"
+                    width={24}
+                    height={24}
+                    className="object-contain w-5 h-5 sm:w-7 sm:h-7"
                   />
                 </div>
 
-                <h3 className="font-semibold text-gray-900 text-sm tracking-wide">
+                <h3 className="font-semibold text-gray-900 text-xs sm:text-sm tracking-wide">
                   {skill.title}
                 </h3>
               </div>
@@ -290,12 +299,12 @@ const Skills = (): React.ReactElement => {
           ))}
         </div>
 
-        {/* See More/Less Button - No rounded corners */}
+        {/* See More/Less Button */}
         {hasMoreSkills && (
           <div className="text-center mb-8">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="inline-flex items-center gap-2 px-6 py-3 text-gray-700 hover:text-gray-900 font-medium border border-gray-300 hover:border-gray-400 transition-colors duration-200"
+              className="inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 text-gray-700 hover:text-gray-900 font-medium border border-gray-300 hover:border-gray-400 transition-colors duration-200 text-sm md:text-base"
             >
               {showAll
                 ? "Show Less"
