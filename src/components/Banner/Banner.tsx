@@ -84,7 +84,7 @@ const Banner = (): React.ReactElement => {
                 {techWords.map((word, index) => (
                   <span
                     key={word}
-                    className={`absolute left-0 text-lg font-medium transition-all duration-500 ${
+                    className={`absolute left-0 text-lg font-medium transition-all duration-600 ${
                       index === activeWord
                         ? "opacity-100 translate-y-0 text-gray-900"
                         : "opacity-0 translate-y-4"
