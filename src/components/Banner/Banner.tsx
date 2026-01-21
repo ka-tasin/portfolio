@@ -36,7 +36,7 @@ const Banner = (): React.ReactElement => {
         <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-gray-200 opacity-20 transform -rotate-45" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 border border-gray-200 opacity-20 transform rotate-45" />
         <div className="absolute top-1/3 right-1/3 w-40 h-40 border border-gray-200 opacity-15" />
-        
+
         {/* Grid Lines - Full width */}
         <div className="absolute inset-0 grid grid-cols-12 gap-0 opacity-5 w-full">
           {Array.from({ length: 12 }).map((_, i) => (
@@ -47,11 +47,15 @@ const Banner = (): React.ReactElement => {
 
       {/* Content Container - Full width with centered content - REMOVED PADDING */}
       <div className="w-full relative mt-24 z-10">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Animated Introduction */}
-          <div className={`transition-all duration-1000 delay-300 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}>
+          <div
+            className={`transition-all duration-1000 delay-300 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-4 h-0.5 bg-gray-900" />
               <span className="text-sm font-medium text-gray-600 tracking-wider uppercase">
@@ -75,7 +79,7 @@ const Banner = (): React.ReactElement => {
                   Specialized in
                 </h3>
               </div>
-              
+
               <div className="relative h-8">
                 {techWords.map((word, index) => (
                   <span
@@ -96,37 +100,56 @@ const Banner = (): React.ReactElement => {
             </div>
 
             {/* Description */}
-            <div className={`mb-10 transition-all duration-1000 delay-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}>
+            <div
+              className={`mb-10 transition-all duration-1000 delay-700 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
               <p className="text-gray-700 text-lg leading-relaxed">
-                A dedicated software engineer with <span className="font-semibold text-gray-900">1.5+ years</span> of professional experience, specializing in backend development. 
-                Proficient in architecting robust, scalable applications with modern technologies. 
-                Focused on delivering high-quality, efficient solutions through clean architecture 
-                and best practices.
+                A dedicated software engineer with{" "}
+                <span className="font-semibold text-gray-900">1.5+ years</span>{" "}
+                of professional experience, specializing in backend development.
+                Proficient in architecting robust, scalable applications with
+                modern technologies. Focused on delivering high-quality,
+                efficient solutions through clean architecture and best
+                practices.
               </p>
             </div>
 
             {/* Stats & CTA */}
-            <div className={`flex flex-col md:flex-row items-start md:items-center justify-between gap-8 transition-all duration-1000 delay-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}>
+            <div
+              className={`flex flex-col md:flex-row items-start md:items-center justify-between gap-8 transition-all duration-1000 delay-1000 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
               {/* Quick Stats */}
               <div className="flex items-center gap-8">
                 <div className="text-center">
                   <div className="flex items-center gap-2 mb-2">
                     <FiServer className="w-5 h-5 text-gray-900" />
-                    <span className="text-2xl font-bold text-gray-900">1.5+</span>
+                    <span className="text-2xl font-bold text-gray-900">
+                      1.5+
+                    </span>
                   </div>
-                  <span className="text-sm text-gray-600">Years Experience</span>
+                  <span className="text-sm text-gray-600">
+                    Years Experience
+                  </span>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="flex items-center gap-2 mb-2">
                     <FiDatabase className="w-5 h-5 text-gray-900" />
-                    <span className="text-2xl font-bold text-gray-900">50+</span>
+                    <span className="text-2xl font-bold text-gray-900">
+                      50+
+                    </span>
                   </div>
-                  <span className="text-sm text-gray-600">Projects Completed</span>
+                  <span className="text-sm text-gray-600">
+                    Projects Completed
+                  </span>
                 </div>
               </div>
 
@@ -155,9 +178,11 @@ const Banner = (): React.ReactElement => {
             </div>
 
             {/* Scroll Indicator */}
-            <div className={`mt-20 transition-all duration-1000 delay-1200 ${
-              isVisible ? "opacity-100" : "opacity-0"
-            }`}>
+            <div
+              className={`mt-20 transition-all duration-1000 delay-1200 ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
+            >
               <div className="flex flex-col items-center">
                 <span className="text-xs text-gray-500 mb-2 tracking-wider">
                   EXPLORE PORTFOLIO
