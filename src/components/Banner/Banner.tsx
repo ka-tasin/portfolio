@@ -59,7 +59,7 @@ const Banner = (): React.ReactElement => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-4 h-0.5 bg-gray-900" />
               <span className="text-sm font-medium text-gray-600 tracking-wider uppercase">
-                Software Engineer
+                Full Stack Engineer
               </span>
             </div>
 
