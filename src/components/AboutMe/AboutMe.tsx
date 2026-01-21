@@ -16,7 +16,7 @@ import { FiCpu, FiCode, FiLayers, FiTrendingUp } from "react-icons/fi";
 
 const AboutMe = (): React.ReactElement => {
   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: true }),
   );
 
   const [scrollY, setScrollY] = useState(0);
@@ -101,7 +101,7 @@ const AboutMe = (): React.ReactElement => {
               <div className="relative group">
                 <Carousel
                   plugins={[plugin.current]}
-                  className="w-full max-w-sm lg:max-w-md mx-auto"
+                  className="w-full max-w-sm lg:max-w-lg mx-auto"
                   onMouseEnter={plugin.current.stop}
                   onMouseLeave={plugin.current.reset}
                 >
@@ -113,20 +113,16 @@ const AboutMe = (): React.ReactElement => {
                     ].map((src, index) => (
                       <CarouselItem
                         key={index}
-                        className="basis-full h-[500px]"
+                        className="basis-full h-[600px]"
                       >
-                        <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 to-gray-900/5 rounded-xl" />
+                        <div className="relative w-full h-full rounded-xl overflow-hidden">
+                          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 to-gray-900/5 z-10" />
                           <Image
-                            className="bg-gray-50 border object-cover border-gray-200 rounded-xl shadow-lg transition-transform duration-500 hover:scale-[1.02]"
                             src={src}
-                            width={400}
-                            height={600}
                             alt="kausar-ahmad-tasin"
-                            style={{
-                              transform: `translateY(${scrollY * 0.02}px)`,
-                              transition: "transform 0.3s ease-out",
-                            }}
+                            fill
+                            priority={index === 0}
+                            className="object-cover rounded-xl"
                           />
                         </div>
                       </CarouselItem>
@@ -162,7 +158,7 @@ const AboutMe = (): React.ReactElement => {
                   <div className="flex flex-wrap gap-3">
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium shadow-sm">
                       <FiCode className="w-4 h-4" />
-                      Backend Specialist
+                      Full-Stack Development
                     </span>
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium shadow-sm">
                       <FiLayers className="w-4 h-4" />
@@ -188,7 +184,7 @@ const AboutMe = (): React.ReactElement => {
                     <span className="font-semibold text-gray-900">
                       1.5+ years of experience
                     </span>{" "}
-                    in crafting robust backend systems and scalable
+                    in crafting robust Fullstack systems and scalable
                     applications.
                   </p>
 
