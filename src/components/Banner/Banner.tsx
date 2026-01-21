@@ -29,7 +29,7 @@ const Banner = (): React.ReactElement => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white scroll-mt-16 w-full"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden mb-12 md:mb-0 bg-white scroll-mt-16 w-full"
     >
       {/* Geometric Background Pattern - Full width */}
       <div className="absolute inset-0 overflow-hidden z-0 w-full">
