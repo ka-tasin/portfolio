@@ -12,9 +12,6 @@ const Education = (): React.ReactElement => {
           <Title className="mb-3">
             Education
           </Title>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Academic background and qualifications
-          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
