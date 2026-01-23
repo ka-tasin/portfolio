@@ -49,7 +49,7 @@ const Footer = (): React.ReactElement => {
                 KAUSAR AHMAD TASIN
               </h3>
               <p className="text-sm text-gray-400 font-medium tracking-wider uppercase">
-                Full Stack Developer
+                Full Stack Engineer
               </p>
             </div>
             
